@@ -2,6 +2,8 @@
 
 **A product-thinking layer for people who vibe code.**
 
+![kimchi grilling an idea into build-ready docs](assets/demo.gif)
+
 You get ideas constantly. The problem was never the idea — it's everything between the
 idea and a working app. You open your AI tool, type a vague prompt, and jump straight to
 execution... only to discover vibe coding isn't as straightforward as it looked. The AI
