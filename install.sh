@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Installs the kimchi skill into Claude Code (~/.claude/skills/kimchi).
+# Installs the kimchi skill standalone into Claude Code (~/.claude/skills/kimchi),
+# giving the clean /kimchi invocation. (The plugin install also uses /kimchi — see README.)
 set -euo pipefail
 
-SRC="$(cd "$(dirname "$0")" && pwd)/skills/kimchi"
+SRC="$(cd "$(dirname "$0")" && pwd)/plugin"
 DEST="${HOME}/.claude/skills/kimchi"
 
 if [ ! -f "${SRC}/SKILL.md" ]; then
@@ -10,9 +11,10 @@ if [ ! -f "${SRC}/SKILL.md" ]; then
   exit 1
 fi
 
-mkdir -p "$(dirname "$DEST")"
 rm -rf "$DEST"
-cp -R "$SRC" "$DEST"
+mkdir -p "$DEST"
+cp "${SRC}/SKILL.md" "$DEST/"
+cp -R "${SRC}/references" "$DEST/"
 
 echo "🌶️  kimchi installed → $DEST"
 echo "Restart Claude Code, then run: /kimchi"

@@ -57,8 +57,8 @@ In Claude Code:
 /plugin install kimchi@ceejay
 ```
 
-Update later with `/plugin marketplace update ceejay`. Plugin skills are namespaced, so
-you invoke it as **`/kimchi:kimchi`** (e.g. `/kimchi:kimchi PH`).
+Update later with `/plugin marketplace update ceejay`. kimchi ships as a single skill, so
+it invokes with the clean name **`/kimchi`** (e.g. `/kimchi PH`) — no namespace prefix.
 
 ### Option B — as a standalone skill (clean `/kimchi` name)
 
@@ -73,8 +73,7 @@ Copies the skill into `~/.claude/skills/kimchi/`. **Restart Claude Code**. Invok
 
 ## Usage
 
-Commands below use the standalone name `/kimchi`. If you installed the plugin, prefix with
-the namespace — `/kimchi:kimchi …`.
+Same `/kimchi` invocation whichever way you installed it.
 
 ```
 /kimchi              # no argument — full product-development lifecycle, guided
