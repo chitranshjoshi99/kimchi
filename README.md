@@ -28,7 +28,7 @@ name.
 
 - **Grills the idea.** Summon experts one at a time; each interrogates your idea in their
   domain until ~9 of 10 hard questions have clean answers. No "great idea!" — real friction.
-- **No appeasement.** Every persona recommends *with reasons* and tells you when you're
+- **No appeasement.** Every persona recommends _with reasons_ and tells you when you're
   hand-waving past a real problem.
 - **Compiles build docs.** One doc per EPIC — user stories, business severity/complexity,
   priority order, locked tech decisions, API contracts, and a tracker.
@@ -46,18 +46,35 @@ auditor.
 
 ## Install
 
-Requires [Claude Code](https://claude.com/claude-code).
+Requires [Claude Code](https://claude.com/claude-code). Two ways:
+
+### Option A — as a plugin (recommended: auto-updates, cross-platform)
+
+In Claude Code:
+
+```
+/plugin marketplace add chitranshjoshi99/kimchi
+/plugin install kimchi@kimchi
+```
+
+Update later with `/plugin marketplace update kimchi`. Plugin skills are namespaced, so
+you invoke it as **`/kimchi:kimchi`** (e.g. `/kimchi:kimchi PH`).
+
+### Option B — as a standalone skill (clean `/kimchi` name)
 
 ```bash
-git clone https://github.com/<your-username>/kimchi.git
+git clone https://github.com/chitranshjoshi99/kimchi.git
 cd kimchi
 ./install.sh
 ```
 
-This copies the skill into `~/.claude/skills/kimchi/`. **Restart Claude Code**, then it's
-live.
+Copies the skill into `~/.claude/skills/kimchi/`. **Restart Claude Code**. Invoke as
+**`/kimchi`** (no namespace).
 
 ## Usage
+
+Commands below use the standalone name `/kimchi`. If you installed the plugin, prefix with
+the namespace — `/kimchi:kimchi …`.
 
 ```
 /kimchi              # no argument — full product-development lifecycle, guided

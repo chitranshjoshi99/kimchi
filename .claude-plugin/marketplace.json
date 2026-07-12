@@ -1,0 +1,16 @@
+{
+  "name": "kimchi",
+  "owner": {
+    "name": "Chitransh Joshi"
+  },
+  "metadata": {
+    "description": "kimchi — a product-thinking layer for vibe coders. Grills a raw idea into build-ready docs."
+  },
+  "plugins": [
+    {
+      "name": "kimchi",
+      "source": "./",
+      "description": "Pressure-tests a raw product idea into build-ready EPIC docs by grilling you through 13 world-class expert personas. For vibe coders who get ideas but hit AI slop when prompting directly."
+    }
+  ]
+}

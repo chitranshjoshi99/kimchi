@@ -2,7 +2,7 @@
 # Installs the kimchi skill into Claude Code (~/.claude/skills/kimchi).
 set -euo pipefail
 
-SRC="$(cd "$(dirname "$0")" && pwd)/skill"
+SRC="$(cd "$(dirname "$0")" && pwd)/skills/kimchi"
 DEST="${HOME}/.claude/skills/kimchi"
 
 if [ ! -f "${SRC}/SKILL.md" ]; then
