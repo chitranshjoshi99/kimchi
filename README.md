@@ -46,11 +46,10 @@ auditor.
 
 ## Install
 
-Requires [Claude Code](https://claude.com/claude-code). Two ways:
+Works in **[Claude Code](https://claude.com/claude-code)** and **[Codex CLI](https://developers.openai.com/codex)**
+— both read the same `SKILL.md` format.
 
-### Option A — as a plugin (recommended: auto-updates, cross-platform)
-
-In Claude Code:
+### Claude Code — plugin (recommended: auto-updates)
 
 ```
 /plugin marketplace add chitranshjoshi99/kimchi
@@ -60,20 +59,33 @@ In Claude Code:
 Update later with `/plugin marketplace update ceejay`. kimchi ships as a single skill, so
 it invokes with the clean name **`/kimchi`** (e.g. `/kimchi PH`) — no namespace prefix.
 
-### Option B — as a standalone skill (clean `/kimchi` name)
+### Claude Code / Codex — clone + install script
 
 ```bash
 git clone https://github.com/chitranshjoshi99/kimchi.git
 cd kimchi
-./install.sh
+./install.sh          # auto-detects installed agents
+# or force one:  ./install.sh claude | codex | all
 ```
 
-Copies the skill into `~/.claude/skills/kimchi/`. **Restart Claude Code**. Invoke as
-**`/kimchi`** (no namespace).
+- **Claude Code** → `~/.claude/skills/kimchi/` → invoke `/kimchi`
+- **Codex CLI** → `~/.codex/skills/kimchi/` → invoke via `/skills` menu or `$kimchi`
+
+**Restart the agent** after installing so it picks up the skill.
+
+### Codex — manual
+
+Copy the skill into your Codex skills directory (personal or project-local):
+
+```bash
+git clone https://github.com/chitranshjoshi99/kimchi.git
+mkdir -p ~/.codex/skills/kimchi
+cp -R kimchi/plugin/SKILL.md kimchi/plugin/references ~/.codex/skills/kimchi/
+```
 
 ## Usage
 
-Same `/kimchi` invocation whichever way you installed it.
+Invoke `/kimchi` (Claude Code) or `$kimchi` (Codex). Arguments are the same either way.
 
 ```
 /kimchi              # no argument — full product-development lifecycle, guided
